@@ -44,15 +44,38 @@
         </div>
 
         <!-- Priority dropdown menu -->
-        <div class="input-group mb-3">
-            <select class="custom-select" id="priorityDropdown">
-                <option selected disabled>Priorität...</option>
-                <option value="keine">Keine</option>
-                <option value="niedrig">Niedrig</option>
-                <option value="mittel">Mittel</option>
-                <option value="hoch">Hoch</option>
-            </select>
+        <div class="container my-1 text-center">
+
+            <!-- Dropdowns for Wiederholung and Priorität -->
+            <div class="input-group mb-3 d-flex justify-content-center">
+                <!-- Wiederholung dropdown -->
+                <div class="me-2">
+                    <select class="custom-select" id="wiederholenDropdown">
+                        <option selected disabled>Wiederholung...</option>
+                        <option value="keine">Keine</option>
+                        <option value="niedrig">Täglich</option>
+                        <option value="mittel">Wöchentlich</option>
+                        <option value="hoch">Monatlich</option>
+                        <option value="hoch">Jährlich</option>
+                    </select>
+                </div>
+
+                <!-- Priorität dropdown -->
+                <div>
+                    <select class="custom-select" id="priorityDropdown">
+                        <option selected disabled>Priorität...</option>
+                        <option value="keine">Keine</option>
+                        <option value="niedrig">Niedrig</option>
+                        <option value="mittel">Mittel</option>
+                        <option value="hoch">Hoch</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Rest of your content... -->
+
         </div>
+
 
         <!-- Text input for entering or choosing a category -->
         <div class="input-group mb-3">
@@ -67,11 +90,12 @@
 
 
         <!-- List of cards for added tasks -->
-        <div class="mt-4 d-flex justify-content-center" >
+        <div class="mt-4 d-flex justify-content-center">
             <div class="card" style="width: 18rem; overflow-y: auto; max-height: 400px;">
                 <ul class="list-group list-group-flush">
                     <!-- Repeat this list item for each card you want to display -->
-                    <li class="list-group-item" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); border: 1px solid #757575;">
+                    <li class="list-group-item"
+                        style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); border: 1px solid #757575;">
                         <div class="d-flex align-items-center">
                             <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
@@ -79,7 +103,8 @@
                             </label>
                         </div>
                     </li>
-                    <li class="list-group-item" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); border: 1px solid #757575;">
+                    <li class="list-group-item"
+                        style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); border: 1px solid #757575;">
                         <div class="d-flex align-items-center">
                             <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
@@ -87,7 +112,8 @@
                             </label>
                         </div>
                     </li>
-                    <li class="list-group-item" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); border: 1px solid #757575;">
+                    <li class="list-group-item"
+                        style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); border: 1px solid #757575;">
                         <div class="d-flex align-items-center">
                             <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
@@ -95,7 +121,7 @@
                             </label>
                         </div>
                     </li>
-                    
+
                     <!-- More list items -->
                 </ul>
             </div>

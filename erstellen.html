@@ -44,15 +44,38 @@
         </div>
 
         <!-- Priority dropdown menu -->
-        <div class="input-group mb-3">
-            <select class="custom-select" id="priorityDropdown">
-                <option selected disabled>Priorität...</option>
-                <option value="keine">Keine</option>
-                <option value="niedrig">Niedrig</option>
-                <option value="mittel">Mittel</option>
-                <option value="hoch">Hoch</option>
-            </select>
+        <div class="container my-1 text-center">
+
+            <!-- Dropdowns for Wiederholung and Priorität -->
+            <div class="input-group mb-3 d-flex justify-content-center">
+                <!-- Wiederholung dropdown -->
+                <div class="me-2">
+                    <select class="custom-select" id="wiederholenDropdown">
+                        <option selected disabled>Wiederholung...</option>
+                        <option value="keine">Keine</option>
+                        <option value="niedrig">Täglich</option>
+                        <option value="mittel">Wöchentlich</option>
+                        <option value="hoch">Monatlich</option>
+                        <option value="hoch">Jährlich</option>
+                    </select>
+                </div>
+
+                <!-- Priorität dropdown -->
+                <div>
+                    <select class="custom-select" id="priorityDropdown">
+                        <option selected disabled>Priorität...</option>
+                        <option value="keine">Keine</option>
+                        <option value="niedrig">Niedrig</option>
+                        <option value="mittel">Mittel</option>
+                        <option value="hoch">Hoch</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Rest of your content... -->
+
         </div>
+
 
         <!-- Text input for entering or choosing a category -->
         <div class="input-group mb-3">
