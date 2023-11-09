@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Material Design for Bootstrap</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+</head>
+
+<body>
+    <!-- Start your project here-->
+    <div class="container my-0 text-center">
+        <h1 class="mb-3 my-2" style="border-bottom: 2px solid black;">To-Do Erstellen</h1>
+
+        <!-- Centered dropdowns with spacing on top -->
+
+    </div>
+
+    <div class="container my-5 text-center flex-grow-1 min-vh-100">
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Aufgabentitel" aria-label="Task Name"
+                aria-describedby="basic-addon2">
+        </div>
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="datepicker" placeholder="Deadline" aria-label="Task Date"
+                aria-describedby="basic-addon3">
+            <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon3">
+                    <i class="far fa-calendar-alt"></i>
+                </span>
+            </div>
+        </div>
+
+        <!-- Priority dropdown menu -->
+        <div class="input-group mb-3">
+            <select class="custom-select" id="priorityDropdown">
+                <option selected disabled>Priorität...</option>
+                <option value="keine">Keine</option>
+                <option value="niedrig">Niedrig</option>
+                <option value="mittel">Mittel</option>
+                <option value="hoch">Hoch</option>
+            </select>
+        </div>
+
+        <!-- Text input for entering or choosing a category -->
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="categoryInput" placeholder="Kategorie eingeben oder auswählen">
+        </div>
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Unteraufgabe" aria-label="Task Name"
+                aria-describedby="basic-addon2">
+            <button class="btn btn-primary" id="addTaskBtn">Hinzufügen</button>
+        </div>
+
+
+        <!-- List of cards for added tasks -->
+        <div class="mt-4 d-flex justify-content-center" >
+            <div class="card" style="width: 18rem; overflow-y: auto; max-height: 400px;">
+                <ul class="list-group list-group-flush">
+                    <!-- Repeat this list item for each card you want to display -->
+                    <li class="list-group-item" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); border: 1px solid #757575;">
+                        <div class="d-flex align-items-center">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Unteraufgabe 1
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); border: 1px solid #757575;">
+                        <div class="d-flex align-items-center">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Unteraufgabe 2
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); border: 1px solid #757575;">
+                        <div class="d-flex align-items-center">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Unteraufgabe 3
+                            </label>
+                        </div>
+                    </li>
+                    
+                    <!-- More list items -->
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        <!-- Bottom button with centered plus icon -->
+        <button
+            class="btn btn-primary btn-sm position-fixed bottom-0 end-0 m-3 rounded-circle d-flex justify-content-center align-items-center"
+            style="width: 60px; height: 60px;">
+            <i class="fas fa-check fa-2x"></i>
+        </button>
+
+        <!-- Top button with centered calendar icon -->
+        <button
+            class="btn btn-primary btn-sm position-fixed end-0 m-3 rounded-circle d-flex justify-content-center align-items-center"
+            style="width: 60px; height: 60px; bottom: 70px;">
+            <i class="fas fa-house fa-2x"></i>
+        </button>
+    </div>
+
+    </div>
+
+
+
+    <!-- End your project here-->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script>
+        // Initialize Datepicker
+        $('#datepicker').datepicker();
+    </script>
+
+    <script>
+        // Array to store added tasks
+        var tasks = [];
+
+        // Function to add a new task to the list
+        $('#addTaskBtn').on('click', function () {
+            var taskName = $('.form-control[aria-label="Task Name"]').val().trim();
+            var priority = $('#priorityInput').val();
+            var category = $('#selectedCategory').val();
+
+            // Check if the task name is not empty
+            if (taskName.length > 0) {
+                // Add the task to the array
+                tasks.push({
+                    title: taskName,
+                    priority: priority,
+                    category: category
+                });
+
+                // Display the tasks in the list
+                displayTasks();
+            }
+        });
+
+        // Function to display tasks in the list
+        function displayTasks() {
+            var taskList = $('#taskList');
+
+            // Clear existing tasks
+            taskList.empty();
+
+            // Add each task as a card to the list
+            tasks.forEach(function (task) {
+                var taskCard = $('<div class="card mb-3">' +
+                    '<div class="card-body d-flex align-items-center">' +
+                    '<input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">' +
+                    '<label class="form-check-label" for="flexCheckDefault">' + task.title + '</label>' +
+                    '</div>' +
+                    '</div>');
+                taskList.append(taskCard);
+            });
+        }
+    </script>
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+</body>
+
+</html>

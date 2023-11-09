@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Material Design for Bootstrap</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="css/mdb.min.css" />
+</head>
+
+<body>
+  <!-- Start your project here-->
+  <div class="container my-0 text-center">
+    <h1 class="mb-3 my-2" style="border-bottom: 2px solid black;">To-Do</h1>
+
+    <!-- Centered dropdowns with spacing on top -->
+    <div class="text-center mt-4"> <!-- mt-4 adds margin-top with the value of 4 units -->
+
+
+      <!-- Dropdown for Filtern -->
+      <div class="dropdown d-inline mx-2">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2"
+          data-mdb-toggle="dropdown" data-mdb-auto-close="outside" aria-expanded="false">
+          Filtern
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+          <!-- Dropright for Option 1 -->
+          <li class="dropdown-item">
+            <div class="btn-group dropend">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-mdb-toggle="dropdown"
+                data-mdb-auto-close="inside" aria-expanded="false">
+                Kategorie
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Lorem Ipsum</a></li>
+                <li><a class="dropdown-item" href="#">Lorem Ipsum</a></li>
+              </ul>
+            </div>
+          </li>
+          <!-- Dropright for Option 2 -->
+          <li class="dropdown-item">
+            <div class="btn-group dropend">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-mdb-toggle="dropdown"
+                data-mdb-auto-close="inside" aria-expanded="false">
+                Status
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Erledigt</a></li>
+                <li><a class="dropdown-item" href="#">Nicht Erledigt</a></li>
+              </ul>
+            </div>
+          </li>
+
+
+        </ul>
+      </div>
+      <!-- Dropdown for Sortieren -->
+      <div class="dropdown d-inline mx-2">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-mdb-toggle="dropdown" aria-expanded="false">
+          Sortieren
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Deadline aufsteigend</a></li>
+          <li><a class="dropdown-item" href="#">Deadline absteigen</a></li>
+          <li><a class="dropdown-item" href="#">Priorität aufsteigend</a></li>
+          <li><a class="dropdown-item" href="#">Priorität absteigend</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container my-5 text-center flex-grow-1">
+      <!-- ... other elements ... -->
+
+      <div class="mt-4 d-flex justify-content-center">
+        <div class="card" style="width: 20rem; overflow-y: auto;">
+          <ul class="list-group list-group-flush">
+            <!-- Repeat this list item for each card you want to display -->
+            <li class="list-group-item mb-3"
+              style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.9); border: 1px solid #757575;">
+              <div class="d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Aufgabe
+                </label>
+              </div>
+              <div class="d-flex justify-content-between mt-3"> <!-- Increased margin-top to 3 units -->
+                <span class="text-muted">Deadline: 2023-11-09</span>
+                <span class="text-danger">Priorität: Hoch</span>
+              </div>
+            </li>
+
+
+
+            <li class="list-group-item mb-3"
+              style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.9); border: 1px solid #757575;">
+              <div class="d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Aufgabe
+                </label>
+              </div>
+              <div class="d-flex justify-content-between mt-2">
+                <span class="text-muted">Deadline: 2023-11-09</span>
+                <span class="text-warning">Priorität: Mittel</span>
+              </div>
+              <ul class="list-group mt-2">
+                <li class="list-group-item">
+                  <div class="d-flex align-items-center">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckSubtask1">
+                    <label class="form-check-label" for="flexCheckSubtask1">
+                      Unteraufgabe 1
+                    </label>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="d-flex align-items-center">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckSubtask2">
+                    <label class="form-check-label" for="flexCheckSubtask2">
+                      Unteraufgabe 2
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </li>
+
+            <li class="list-group-item mb-3"
+              style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.9); border: 1px solid #757575;">
+              <div class="d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Aufgabe
+                </label>
+              </div>
+              <div class="d-flex justify-content-between mt-3"> <!-- Increased margin-top to 3 units -->
+                <span class="text-muted">Deadline: 2023-11-09</span>
+                <span class="text-success">Priorität: Hoch</span>
+              </div>
+            </li>
+
+
+            <!-- More list items -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom button with centered plus icon -->
+      <button
+        class="btn btn-primary btn-sm position-fixed bottom-0 end-0 m-3 rounded-circle d-flex justify-content-center align-items-center"
+        style="width: 60px; height: 60px;">
+        <i class="far fa-plus fa-4x"></i>
+      </button>
+
+      <!-- Top button with centered calendar icon -->
+      <button
+        class="btn btn-primary btn-sm position-fixed end-0 m-3 rounded-circle d-flex justify-content-center align-items-center"
+        style="width: 60px; height: 60px; bottom: 70px;">
+        <i class="far fa-calendar-days fa-2x"></i>
+      </button>
+
+
+
+
+    </div>
+
+
+
+    <!-- End your project here-->
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+</body>
+
+</html>
